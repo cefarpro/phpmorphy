@@ -75,7 +75,7 @@ abstract class phpMorphy_Fsa_FsaAbstract implements phpMorphy_Fsa_FsaInterface {
         }
 
         $storage_type = $storage->getTypeAsString();
-        $file_path = __DIR__ . "/access/fsa_{$type}_{$storage_type}.php";
+        $file_path = dirname( __FILE__ ) . "/access/fsa_{$type}_{$storage_type}.php";
         $clazz = 'phpMorphy_Fsa_' . ucfirst($type) . '_' . ucfirst($storage_type);
 
         return new $clazz(

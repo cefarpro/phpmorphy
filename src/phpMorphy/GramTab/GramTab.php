@@ -132,7 +132,7 @@ class phpMorphy_GramTab_GramTab implements phpMorphy_GramTab_GramTabInterface {
         static $is_included = false;
 
         if(!$is_included) {
-            require_once(__DIR__ . '/gramtab_consts.php');
+            require_once(dirname( __FILE__ ) . '/gramtab_consts.php');
             $is_included = true;
         }
     }

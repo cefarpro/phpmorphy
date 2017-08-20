@@ -21,7 +21,7 @@
 */
 
 if(!defined('PHPMORPHY_DIR')) {
-    define('PHPMORPHY_DIR', __DIR__);
+    define('PHPMORPHY_DIR', dirname( __FILE__ ) );
 }
 
 require_once(PHPMORPHY_DIR . '/phpMorphy/Loader.php');

@@ -29,7 +29,7 @@ class phpMorphy_Generator_Fsa {
         $helpers_ary = array('Sparse', 'Tree');
         $storage_ary = array('File', 'Mem', 'Shm');
 
-        $tpl = new phpMorphy_Generator_Template(__DIR__ . '/Fsa/tpl');
+        $tpl = new phpMorphy_Generator_Template(dirname( __FILE__ ) . '/Fsa/tpl');
 
         foreach ($helpers_ary as $helper_name) {
             $helper_class = "phpMorphy_Generator_Fsa_Helper" . ucfirst($helper_name);

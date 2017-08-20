@@ -9,7 +9,7 @@ if($argc < 4) {
     exit;
 }
 
-define('BIN_DIR', __DIR__);
+define('BIN_DIR', dirname( __FILE__ ));
 define('MORPHY_DIR', @getenv('MORPHY_DIR') . '/');
 define('MORPHY_BUILDER', MORPHY_DIR . 'bin/morphy_builder.exe');
 

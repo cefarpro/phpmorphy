@@ -1,6 +1,6 @@
 <?php
 // first we include phpmorphy library
-set_include_path(__DIR__ . '/../src/' . PATH_SEPARATOR . get_include_path());
+set_include_path(dirname( __FILE__ ) . '/../src/' . PATH_SEPARATOR . get_include_path());
 require('phpMorphy.php');
 
 // set some options
@@ -19,7 +19,7 @@ $opts = array(
 );
 
 // Path to directory where dictionaries located
-$dir = __DIR__ . '/../dicts/utf-8';
+$dir = dirname( __FILE__ ) . '/../dicts/utf-8';
 $lang = 'ru_RU';
 
 // Create phpMorphy instance

@@ -4,7 +4,7 @@ if($argc < 2) {
     die("Usage {$argv[0]} FILE [OUTPUT_DIR]");
 }
 
-set_include_path(__DIR__ . '/../../src/' . PATH_SEPARATOR . get_include_path());
+set_include_path(dirname( __FILE__ ) . '/../../src/' . PATH_SEPARATOR . get_include_path());
 require('phpMorphy.php');
 require('PHPUnit/Util/File.php');
 

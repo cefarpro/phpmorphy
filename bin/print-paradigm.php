@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-set_include_path(__DIR__ . '/../src/' . PATH_SEPARATOR . get_include_path());
+set_include_path(dirname( __FILE__ ) . '/../src/' . PATH_SEPARATOR . get_include_path());
 require('phpMorphy.php');
 
 define('WORD_NOT_FOUND', 1);
@@ -13,7 +13,7 @@ $word = $argv[1];
 
 $lang = $argc > 2 ? $argv[2] : 'ru_RU';
 
-$dir = __DIR__ . '/../dicts/';
+$dir = dirname( __FILE__ ) . '/../dicts/';
 $dir .= $argc > 3 ? "/{$argv[3]}" : 'utf-8';
 
 $opts = array(

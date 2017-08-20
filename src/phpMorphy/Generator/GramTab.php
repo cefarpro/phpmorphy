@@ -27,7 +27,7 @@ class phpMorphy_Generator_GramTab {
      * @return void
      */
     static function generateCpp($outputHeaderFile, $outputCppFile) {
-        $tpl = new phpMorphy_Generator_Template(__DIR__ . '/GramTab/tpl/cpp');
+        $tpl = new phpMorphy_Generator_Template(dirname( __FILE__ ) . '/GramTab/tpl/cpp');
         $helpers = phpMorphy_Dict_GramTab_ConstStorage_Factory::getAllHelpers();
 
         $declaration = $tpl->get('declaration', array('helpers' => $helpers));
@@ -42,7 +42,7 @@ class phpMorphy_Generator_GramTab {
      * @return void
      */
     static function generatePhp($outputFile) {
-        $tpl = new phpMorphy_Generator_Template(__DIR__ . '/GramTab/tpl/php');
+        $tpl = new phpMorphy_Generator_Template(dirname( __FILE__ ) . '/GramTab/tpl/php');
         $consts = phpMorphy_Dict_GramTab_ConstStorage_Factory::getAllHelpers();
         $helper = new phpMorphy_Generator_GramTab_HelperPhp();
 

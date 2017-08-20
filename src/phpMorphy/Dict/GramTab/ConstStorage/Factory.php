@@ -24,7 +24,7 @@ class phpMorphy_Dict_GramTab_ConstStorage_Factory {
     const SPECIALS_LANG = 'specials';
 
     protected static function getLangMap() {
-        if(false === ($map = include(__DIR__ . '/data/lang_map.php'))) {
+        if(false === ($map = include(dirname( __FILE__ ) . '/data/lang_map.php'))) {
             throw new Exception("Can`t open langs map file");
         }
 
@@ -53,7 +53,7 @@ class phpMorphy_Dict_GramTab_ConstStorage_Factory {
 
         $lang = strtolower($lang);
         $file = isset($map[$lang]) ? $map[$lang] : $map[false];
-        $filePath = __DIR__ . '/data/' . $file;
+        $filePath = dirname( __FILE__ ) . '/data/' . $file;
         $loader = new phpMorphy_Dict_GramTab_ConstStorage_Loader($filePath);
         $is_specials = $lang === self::SPECIALS_LANG;
         $clazz = $is_specials ?

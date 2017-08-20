@@ -3,9 +3,9 @@
 error_reporting(E_ALL | E_STRICT);
 
 define('REMOVE_DUPLICATES', true);
-define('PATH_TO_MYSTEM', __DIR__ . '/../../mystem/mystem');
-define('DICTS_DIR', __DIR__ . '/../dicts');
-define('MORPHY_2X_DIR', __DIR__ . '/../../phpmorphy-php-2.5');
+define('PATH_TO_MYSTEM', dirname( __FILE__ ) . '/../../mystem/mystem');
+define('DICTS_DIR', dirname( __FILE__ ) . '/../dicts');
+define('MORPHY_2X_DIR', dirname( __FILE__ ) . '/../../phpmorphy-php-2.5');
 define('MORPHY_2X_DICTS_DIR', MORPHY_2X_DIR . '/dicts');
 
 if($argc < 2) {
@@ -20,7 +20,7 @@ $lang = 'rus';
 
 $morphy_ver = getenv('PHPMORPHY_VER');
 if($morphy_ver !== "0.2") {
-    set_include_path(__DIR__ . '/../src/' . PATH_SEPARATOR . get_include_path());
+    set_include_path(dirname( __FILE__ ) . '/../src/' . PATH_SEPARATOR . get_include_path());
     require('phpMorphy.php');
 } else {
     require_once(MORPHY_2X_DIR . '/src/common.php');
@@ -53,7 +53,7 @@ bench_morphy($words, $encoding, $dict_dir, $lang, PHPMORPHY_STORAGE_SHM, true);
 bench_morphy($words, $encoding, $dict_dir, $lang, PHPMORPHY_STORAGE_MEM, false);
 bench_morphy($words, $encoding, $dict_dir, $lang, PHPMORPHY_STORAGE_MEM, true);
 
-//file_put_contents(__DIR__ . '/.bench.words.txt', implode(PHP_EOL, $words));
+//file_put_contents(dirname( __FILE__ ) . '/.bench.words.txt', implode(PHP_EOL, $words));
 print_memory_usage();
 /////////////////////////////////////////////////////////////////
 

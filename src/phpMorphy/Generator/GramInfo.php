@@ -28,7 +28,7 @@ class phpMorphy_Generator_GramInfo {
     static function generate($outputDirectory) {
         $storage_ary = array('File', 'Mem', 'Shm');
 
-        $tpl = new phpMorphy_Generator_Template(__DIR__ . '/GramInfo/tpl');
+        $tpl = new phpMorphy_Generator_Template(dirname( __FILE__ ) . '/GramInfo/tpl');
         $helper_class = "phpMorphy_Generator_TemplateHelper_Fsa";
 
         foreach($storage_ary as $storage_name) {

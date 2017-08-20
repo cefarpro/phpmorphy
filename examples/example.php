@@ -2,7 +2,7 @@
 error_reporting(E_ALL | E_STRICT);
 
 // first we include phpmorphy library
-require_once(__DIR__ . '/../src/common.php');
+require_once(dirname( __FILE__ ) . '/../src/common.php');
 
 // set some options
 $opts = array(
@@ -20,7 +20,7 @@ $opts = array(
 );
 
 // Path to directory where dictionaries located
-$dir = __DIR__ . '/../dicts';
+$dir = dirname( __FILE__ ) . '/../dicts';
 
 // Create descriptor for dictionary located in $dir directory with russian language
 $dict_bundle = new phpMorphy_FilesBundle($dir, 'rus');

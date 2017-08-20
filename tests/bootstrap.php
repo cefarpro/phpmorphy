@@ -1,2 +1,2 @@
 <?php
-require(__DIR__ . '/../src/phpMorphy.php');
+require(dirname( __FILE__ ) . '/../src/phpMorphy.php');
